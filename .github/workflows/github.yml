@@ -1,0 +1,19 @@
+name: ci-pipeline
+
+on: push
+
+jobs:
+  mypy-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: setup-python 3.8
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.8
+
+      - name: mypy
+        run: mypy commander config
+
+      - name: test
+        run: python -m unittest
