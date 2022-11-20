@@ -1,0 +1,4 @@
+{
+    "load": ["Dropbox", "Notes", "todolist.italist"],
+    "key": ["var"]
+}
