@@ -1,7 +1,8 @@
 from unittest import TestCase
+
 from unittest.mock import patch, mock_open
 
-import config
+from .config import *
 
 class TestConfig(TestCase):
     def setUp(self):

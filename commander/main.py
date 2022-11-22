@@ -1,7 +1,6 @@
 import argparse
 
-import config
-from config import log_error, log_debug
+from config import config, log_error, log_debug
 from commander import Commander
 
 
