@@ -1,6 +1,6 @@
 from typing import List, Optional
 
-from config import ConfigType, load_config, save_config
+from .config import ConfigType, load_config, save_config
 
 
 Command = List[str]
@@ -23,7 +23,7 @@ class Commander:
     def is_command(self, key: str) -> bool:
         return key in self.config
 
-    def get_command(self, key: str) -> Optional[str]:
+    def get_command(self, key: str) -> Optional[List[str]]:
         if key in self.config:
             return self.config[key]
         return None
