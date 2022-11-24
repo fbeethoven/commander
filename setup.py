@@ -15,7 +15,6 @@ setuptools.setup(
     description="Cli tool to keep track of common commands",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    install_requires=requirements,
     url="https://github.com/your/github/project",
     packages=setuptools.find_packages(),
     classifiers=(

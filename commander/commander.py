@@ -13,7 +13,7 @@ class Commander:
 
     def add_command(self, key: str, cmd: Command):
         self.config[key] = cmd
-        config.save_config(self.config, self.save_path)
+        save_config(self.config, self.save_path)
 
     def delete_command(self, key: str):
         if key in self.config:
