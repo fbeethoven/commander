@@ -1,4 +1,12 @@
 {
-    "load": ["Dropbox", "Notes", "todolist.italist"],
-    "key": ["var"]
+    "load": [
+        "Dropbox",
+        "Notes",
+        "todolist.italist"
+    ],
+    "key2": [
+        "bees",
+        "foo",
+        "bar"
+    ]
 }

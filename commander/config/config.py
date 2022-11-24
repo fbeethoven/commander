@@ -5,8 +5,10 @@ from typing import List, Dict
 
 
 PATH = os.path.join(os.path.dirname(__file__), "config.json")
+LOG_LEVEL = logging.DEBUG if "DEV" in os.environ else logging.INFO
+
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=LOG_LEVEL,
     format="[%(levelname)s::%(asctime)s] %(message)s"
 )
 
