@@ -26,6 +26,7 @@ class Commander:
     def get_command(self, key: str) -> Optional[str]:
         if key in self.config:
             return self.config[key]
+        return None
 
     def handle_command(self, cmd: str) -> None:
         if cmd == "ls":
