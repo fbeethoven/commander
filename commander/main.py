@@ -1,7 +1,7 @@
 import argparse
 
-from .config import config, log_error, log_debug
-from .commander import Commander
+from config import config, log_error, log_debug
+from commander import Commander  # type: ignore
 
 
 parser = argparse.ArgumentParser(

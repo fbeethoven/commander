@@ -1,6 +1,6 @@
 from typing import List
 
-from .config import ConfigType, load_config, save_config
+from config import ConfigType, load_config, save_config
 
 
 Command = List[str]
