@@ -29,7 +29,6 @@ def load_config(config_path: str) -> ConfigType:
         with open(config_path, "r") as file:
                 data = json.load(file)
     except Exception as e:
-        print(os.getcwd())
         log_error(str(e))
         return {}
 
