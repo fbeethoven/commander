@@ -1,10 +1,10 @@
 import argparse
 
-from config import config, log_error, log_debug
-from commander import Commander  # type: ignore
+from .config import config, log_error, log_debug
+from .commander import Commander  # type: ignore
 
 
-if __name__ == "__main__":
+def main() -> None:
     parser = argparse.ArgumentParser(
         prog = "Commander",
         description = "Cli tool to keep track of common comands",
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     parser.add_argument("-o", "--out", default=config.PATH)
     parser.add_argument("-a", "--add", nargs="+")
     parser.add_argument("-d", "--delete")
-    parser.add_argument("key")
+    parser.add_argument("key", nargs="?")
 
     args = parser.parse_args()
 
@@ -37,12 +37,14 @@ if __name__ == "__main__":
 
     if args.key:
         com.handle_command(args.key)
-        import os
-        os.environ["TEST"] = "MY_VAR"
 
     elif args.add and len(args.add) >= 2:
         com.add_command(args.add[0], args.add[1:])
 
     elif args.delete:
         com.delete_command(args.delete)
+
+
+if __name__ == "__main__":
+    main()
 
