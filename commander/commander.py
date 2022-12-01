@@ -20,18 +20,25 @@ class Commander:
             self.config.pop(key)
             save_config(self.config, self.save_path)
 
-    def is_command(self, key: str) -> bool:
-        return key in self.config
-
     def get_command(self, key: str) -> Optional[List[str]]:
         if key in self.config:
             return self.config[key]
         return None
 
+
     def handle_command(self, cmd: str) -> None:
         if cmd == "ls":
             for key in self.config:
                 print(key)
-        elif cmd in self.config:
-            list(map(print, self.config[cmd]))
+
+        matches: List[str] = [full_key for full_key in self.config if cmd in full_key]
+        if len(matches) == 0:
+            return None
+
+        elif len(matches) == 1:
+            list(map(print, self.config[matches[0]]))
+
+        else:
+            print(" ".join(matches))
+        return None
 
